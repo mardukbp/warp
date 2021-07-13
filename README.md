@@ -403,7 +403,7 @@ PS> dotnet publish -c release -r win-x86 -p:PublishSingleFile=true -p:PublishTri
 ```
 The application should be published to `.\bin\release\net5.0\win-x86\publish\`
 
-**Download `warp-packer` to a directory in your PATH**
+**[Download](https://github.com/mardukbp/warp/releases/tag/windows-x86) `warp-packer` to a directory in your PATH**
 
 **Create your self-contained application**
 
