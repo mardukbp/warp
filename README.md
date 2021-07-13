@@ -389,27 +389,26 @@ Diegos-iMac:myapp dgiagio$ du -hs myapp
 **Create a simple console application**
 
 ```powershell
-PS C:\Users\Diego\Devel> mkdir myapp
-PS C:\Users\Diego\Devel> cd myapp
-PS C:\Users\Diego\Devel\myapp> dotnet new console
-PS C:\Users\Diego\Devel\myapp> dotnet run
+PS> mkdir myapp
+PS> cd myapp
+PS> dotnet new console
+PS> dotnet run
 Hello World!
-PS C:\Users\Diego\Devel\myapp>
 ```
 
 **Publish the application for `win-x86` runtime**
 
 ```powershell
-dotnet publish -c release -r win-x86 -p:PublishSingleFile=true -p:PublishTrimmed=true
+PS> dotnet publish -c release -r win-x86 -p:PublishSingleFile=true -p:PublishTrimmed=true
 ```
-The application should be published to `bin/Release/netcoreapp5.0/win-x86/publish/`
+The application should be published to `bin/release/net5.0/win-x86/publish/`
 
 **Download `warp-packer` to a directory in your PATH**
 
 **Create your self-contained application**
 
 ```powershell
-warp-packer.exe --arch windows-x86 --input_dir .\bin\release\net5.0\win-x86\publish --exec myapp.exe --output myapp.exe
+PS> warp-packer.exe --arch windows-x86 --input_dir .\bin\release\net5.0\win-x86\publish --exec myapp.exe --output myapp.exe
 ```
 
 **Run your self-contained application**
