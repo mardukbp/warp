@@ -401,7 +401,7 @@ Hello World!
 ```powershell
 PS> dotnet publish -c release -r win-x86 -p:PublishSingleFile=true -p:PublishTrimmed=true
 ```
-The application should be published to `bin/release/net5.0/win-x86/publish/`
+The application should be published to `.\bin\release\net5.0\win-x86\publish\`
 
 **Download `warp-packer` to a directory in your PATH**
 
@@ -421,8 +421,8 @@ Hello World!
 **More information about your self-contained application**
 
 ```powershell
-PS C:\Users\Diego\Devel\myapp> "{0:N2} MB" -f ((Get-Item myapp.exe).Length / 1MB)
-28.51 MB
+PS> "{0:N2} MB" -f ((Get-Item myapp.exe).Length / 1MB)
+12.0 MB
 ```
 
 ## Quickstart with Java
