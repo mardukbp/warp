@@ -10,7 +10,7 @@ Warp is written in Rust and is supported on Linux, Windows and macOS.
     + [Linux](#linux)
     + [macOS](#macos)
     + [Windows](#windows-1)
-  * [Quickstart with .NET Core](#quickstart-with-net-core)
+  * [Quickstart with .NET 5](#quickstart-with-net-5)
     + [Linux](#linux-1)
     + [macOS](#macos-1)
     + [Windows](#windows-2)
@@ -280,7 +280,7 @@ PS C:\Users\Diego\Devel> "{0:N2} MB" -f ((Get-Item myapp.exe).Length / 1MB)
 9.15 MB
 ```
 
-## Quickstart with .NET Core
+## Quickstart with .NET 5
 ### Linux
 **Create a simple console application**
 
@@ -397,32 +397,26 @@ Hello World!
 PS C:\Users\Diego\Devel\myapp>
 ```
 
-**Publish the application with native installer for `win10-x64` runtime**
+**Publish the application for `win-x86` runtime**
 
 ```powershell
-PS C:\Users\Diego\Devel\myapp> dotnet publish -c Release -r win10-x64
+dotnet publish -c release -r win-x86 -p:PublishSingleFile=true -p:PublishTrimmed=true
 ```
-The application should be published to `bin/Release/netcoreapp2.1/win10-x64/publish/`
+The application should be published to `bin/Release/netcoreapp5.0/win-x86/publish/`
 
-**Download `warp-packer`**
-
-If you save `warp-packer` in a directory in your PATH, you only need to download it once.
-```powershell
-PS C:\Users\Diego\Devel\myapp> [Net.ServicePointManager]::SecurityProtocol = "tls12, tls11, tls" ; Invoke-WebRequest https://github.com/dgiagio/warp/releases/download/v0.3.0/windows-x64.warp-packer.exe -OutFile warp-packer.exe
-```
+**Download `warp-packer` to a directory in your PATH**
 
 **Create your self-contained application**
 
 ```powershell
-PS C:\Users\Diego\Devel\myapp> .\warp-packer --arch windows-x64 --input_dir bin/Release/netcoreapp2.1/win10-x64/publish --exec myapp.exe --output myapp.exe
+warp-packer.exe --arch windows-x86 --input_dir .\bin\release\net5.0\win-x86\publish --exec myapp.exe --output myapp.exe
 ```
 
 **Run your self-contained application**
 
 ```powershell
-PS C:\Users\Diego\Devel\myapp> .\myapp.exe
+.\myapp.exe
 Hello World!
-PS C:\Users\Diego\Devel\myapp>
 ```
 
 **More information about your self-contained application**
