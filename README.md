@@ -3,7 +3,7 @@ Warp lets you create self-contained single binary applications making it simpler
 
 Warp is written in Rust and is supported on Linux, Windows and macOS.
 
-### Table of Content
+### Table of Contents
   * [Compiling](#compiling)
     + [Windows](#windows)
   * [Quickstart with Node.js](#quickstart-with-nodejs)
